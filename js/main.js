@@ -3,6 +3,8 @@ var canvas = document.getElementById("canvas");
 var ctx    = canvas.getContext("2d");
 ctx.lineWidth= 20;
 ctx.strokeStyle=('white');
+
+//pared exterior
 ctx.beginPath();
 ctx.moveTo(50,750);
 ctx.lineTo(1150, 750);
@@ -14,12 +16,61 @@ ctx.moveTo(50,50);
 ctx.lineTo(50, 760);
 ctx.closePath();
 ctx.stroke();
+
+//pared interior
+ctx.beginPath();
+ctx.moveTo(200, 600);
+ctx.lineTo(1000, 600);
+ctx.moveTo(1000, 610);
+ctx.lineTo(1000, 200);
+ctx.moveTo(1010, 200);
+ctx.lineTo(200, 200);
+ctx.moveTo(195, 190);
+ctx.lineTo(200, 610);
+ctx.closePath();
+ctx.stroke();
+
+
+//ship model
+
 var img = new Image();
-img.src= "https://raw.githubusercontent.com/guillemmillan/G-Zero-/master/img/spaceship.png";
+img.src= "https://raw.githubusercontent.com/guillemmillan/G-Zero-/master/img/g-ship.png";
 img.onload = function(){
-    ctx.drawImage(img, 70, 650, 50, 50);
+    ctx.drawImage(img, 100, 100, 50, 50);
 }
 
+let ship ={
+    x:100,
+    y:100,
+    speedX:30,
+    speedY:30, 
+} 
+    
+function updateRace(){
+    ctx.restore();
+    ctx.clearRect(0,0, canvas.width, canvas.Height)
+    ctx.drawImage(img, ship.x, ship.y, 50, 50);
+    ctx.save()
+    
+}
+
+function keyInput(event){
+    console.log(event);
+    if (event.code == "ArrowRight"){
+        ship.x = ship.x + ship.speedX;
+    }
+    if (event.code == "ArrowLeft"){
+        ship.x = ship.x -ship.speedX;
+    }
+    if (event.code == "ArrowUp"){
+        ship.y = ship.y - ship.speedY;
+    }
+    if (event.code == "ArrowDown"){
+        ship.y = ship.y + ship.speedY;
+    }
+    updateRace();
+}
+document.onkeydown = keyInput;
 
 
 

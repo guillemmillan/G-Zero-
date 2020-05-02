@@ -11,7 +11,7 @@ Mi proyecto es crear un juego parecido al F-zero pero con vista cenital. En este
 * Crear una página de inicio con un botón para iniciar el juego y que haga aparecer el circuito.
 * Crear un circuito simple.
 * Circuito simple [Circuito simple](https://raw.githubusercontent.com/guillemmillan/G-Zero-/master/img/circuitoSimple.png).
-* Crear una nave que se desplace con 100 puntos.
+* Crear una nave que se desplace con 100 puntos de vida.
 * Restara vida al tocar la pared -5 puntos/s
 * Completar una vuelta a un circuito.
 

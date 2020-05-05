@@ -33,7 +33,11 @@ ctx.stroke();
 
 
 //ship model
-
+var logo = new Image();
+logo.src
+logo.onload = function(){
+    ctx.drawImage(logo, 600, 250, 100, 50);
+}
 var img = new Image();
 img.src= "https://raw.githubusercontent.com/guillemmillan/G-Zero-/master/img/g-ship.png";
 img.onload = function(){
@@ -52,8 +56,8 @@ function updateRace(){
     ctx.restore();
     ctx.clearRect(0,0, canvas.width, canvas.height);
     ctx.drawImage(img, ship.x, ship.y, 50, 50);
-    ctx.save()
-    
+    ctx.save();
+    ctx();
 }
 
 function keyInput(event){

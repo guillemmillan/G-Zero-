@@ -4,7 +4,7 @@
     padding: 0;
     text-align: center;
     color: #FFF;
-    font-family: Helvetica, Arial, sans-serif;
+    font-family: 'Heebo', sans-serif;
     font-size: 16px;
     line-height: 147%;
     background: rgb(0,0,0);
@@ -14,7 +14,11 @@
   main{
     margin: 0 auto; 
   }
-  h1 {}
+  h1 {
+    padding-top: 200px;
+
+
+  }
   
   h2 {}
   
@@ -24,7 +28,17 @@
     margin: 0;
   }
     
-
+  .startb{
+    width: 100px;
+    height: 40px;
+    border-radius: 14px;
+    padding: 3px;
+    background-color: #FFF;
+    margin-top:50px;
+  }
+  .startb:hover{
+    border-color: black;
+  }
   
   .button-alt {
     color: blue;
@@ -36,11 +50,10 @@
     width: 1400px;
     height: 900px;
     margin: 0 auto;
-    z-index:2;
+    
   }
   .splash-screen{
     text-align: center;
-    background-image: url(img/circuitoComplejo.png);    
   }
 
   canvas {
@@ -48,3 +61,21 @@
     border-color: aqua;
     background: black;
  }
+
+ .howto{
+  width: 500px;
+  height: 200px;
+  border: 6px solid violet;
+  border-radius: 33px;
+  padding: 20px;
+  margin: 0 auto;
+  margin-top: 50px;
+  margin-bottom: 600px;
+}
+.howto h2{
+  margin-bottom: 20px;
+}
+.howto p{
+  text-align: justify;
+}
+

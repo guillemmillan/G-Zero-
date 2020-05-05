@@ -28,3 +28,38 @@ class Game {
 
     window.requestAnimationFrame(loop);
   }
+  updateCanvas(){
+    this.player.update();
+    this.enemies.forEach((enemy) => {
+      enemy.update();
+    });
+  }
+
+   clearCanvas() {
+    this.ctx.clearRect(0, 0, this.canvas.width, this.canvas.height);
+  }
+
+  drawCanvas() {
+    this.player.draw();
+    this.enemies.forEach((enemy) => {
+      enemy.draw();
+    });
+  }
+  checkAllCollisions() {
+    this.player.checkScreen();
+    this.enemies.forEach((enemy, index) => {
+      if (this.player.checkCollisionEnemy(enemy)) {
+        this.player.loseLive();
+        this.enemies.splice(index, 1);
+        if (this.player.lives === 0) {
+          this.isGameOver = true;
+          this.onGameOver();
+        }
+      }
+    });
+  }
+
+  gameOverCallback(callback) {
+    this.onGameOver = callback;
+  }
+}

@@ -5,21 +5,17 @@ ctx.lineWidth= 20;
 ctx.strokeStyle=('white');
 
 
-//pared exterior
+//Circuito
 ctx.beginPath();
 ctx.moveTo(50,750);
-ctx.lineTo(1150, 750);
-ctx.moveTo(1150, 760);
-ctx.lineTo(1150, 50);
-ctx.moveTo(1160, 50);
+ctx.lineTo(1350, 750);
+ctx.moveTo(1350, 760);
+ctx.lineTo(1350, 50);
+ctx.moveTo(1360, 50);
 ctx.lineTo(40,50);
 ctx.moveTo(50,50);
 ctx.lineTo(50, 760);
-ctx.closePath();
-ctx.stroke();
-
-//pared interior
-ctx.beginPath();
+//interior
 ctx.moveTo(200, 600);
 ctx.lineTo(1000, 600);
 ctx.moveTo(1000, 610);
@@ -32,11 +28,12 @@ ctx.closePath();
 ctx.stroke();
 
 
+
 //ship model
 var logo = new Image();
-logo.src
+logo.src="https://raw.githubusercontent.com/guillemmillan/G-Zero-/master/img/logo.png";
 logo.onload = function(){
-    ctx.drawImage(logo, 600, 250, 100, 50);
+    ctx.drawImage(logo, 500, 350, 200, 100);
 }
 var img = new Image();
 img.src= "https://raw.githubusercontent.com/guillemmillan/G-Zero-/master/img/g-ship.png";
@@ -49,6 +46,8 @@ let ship ={
     y:100,
     speedX:30,
     speedY:30, 
+    laps: 0,
+  
 } 
 
     

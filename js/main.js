@@ -4,6 +4,7 @@ var ctx    = canvas.getContext("2d");
 ctx.lineWidth= 20;
 ctx.strokeStyle=('white');
 
+
 //pared exterior
 ctx.beginPath();
 ctx.moveTo(50,750);
@@ -36,19 +37,20 @@ ctx.stroke();
 var img = new Image();
 img.src= "https://raw.githubusercontent.com/guillemmillan/G-Zero-/master/img/g-ship.png";
 img.onload = function(){
-    ctx.drawImage(img, 100, 100, 50, 50);
+    ctx.drawImage(img, 600, 100, 50, 50);
 }
 
 let ship ={
-    x:100,
+    x:600,
     y:100,
     speedX:30,
     speedY:30, 
 } 
+
     
 function updateRace(){
     ctx.restore();
-    ctx.clearRect(0,0, canvas.width, canvas.Height)
+    ctx.clearRect(0,0, canvas.width, canvas.height);
     ctx.drawImage(img, ship.x, ship.y, 50, 50);
     ctx.save()
     

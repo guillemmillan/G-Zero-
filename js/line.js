@@ -1,7 +1,7 @@
 "use strict"
 
 class Line{
-    constructor(x, y, speedX, spedY){
+    constructor(x, y, speedX, speedY){
         this.x = x;
         this.y = y;
         this.speedX = speedX;

@@ -1,4 +1,3 @@
-"use strict"
 
 class Ship{
     constructor(x, y){
@@ -136,7 +135,7 @@ class Ship{
             directionRigt() {
                 let moveShip = this;
                 if(
-                  moveShip.crash(moveShip.x + widthBox + moveShip.speedX, moveShip.y + 1) == true || moveShip.crash(moveShip.x + widthBox + moveShip.speedX, moveShip.y + heightBox -1) == true ){
+                  moveShip.crash(moveShip.x + widthBox + moveShip.speedX, moveShip.y + 1) == true || moveShip.crash(moveShip.x + linex + moveShip.speedX, moveShip.y + liney -1) == true ){
                     moveShip.right = false;
                 } else {
                   this.right = true;
@@ -145,7 +144,7 @@ class Ship{
               directionLeft() {
                 let moveShip = this;
                 if(
-                  moveShip.crash(moveShip.x + moveShip.speedX, moveShip.y + 1) == true || moveShip.crash(moveShip.x + moveShip.speedX, moveShip.y + heightBox - 1) == true){
+                  moveShip.crash(moveShip.x + moveShip.speedX, moveShip.y + 1) == true || moveShip.crash(moveShip.x + moveShip.speedX, moveShip.y + liney - 1) == true){
                     moveShip.left = false;
                 } else {
                   moveShip.left = true;
@@ -154,7 +153,7 @@ class Ship{
               directionUp() {
                 let moveShip = this;
                 if(
-                  moveShip.crash(moveShip.y + widthBox + moveShip.speedY, moveShip.x + 1) == true || moveShip.crash(moveShip.y + widthBox + moveShip.speedY, moveShip.x + heightBox -1) == true ){
+                  moveShip.crash(moveShip.y + linex + moveShip.speedY, moveShip.x + 1) == true || moveShip.crash(moveShip.y + linex + moveShip.speedY, moveShip.x + liney -1) == true ){
                     moveShip.right = false;
                 } else {
                   this.right = true;
@@ -163,7 +162,7 @@ class Ship{
               directionDown() {
                 let moveShip = this;
                 if(
-                  moveShip.crash(moveShip.y + moveShip.speedY, moveShip.x + 1) == true || moveShip.crash(moveShip.y + moveShip.speedY, moveShip.x + heightBox - 1) == true){
+                  moveShip.crash(moveShip.y + moveShip.speedY, moveShip.x + 1) == true || moveShip.crash(moveShip.y + moveShip.speedY, moveShip.x + liney - 1) == true){
                     moveShip.left = false;
                 } else {
                   moveShip.left = true;

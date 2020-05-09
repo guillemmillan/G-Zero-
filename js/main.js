@@ -36,9 +36,9 @@ const buildGameScreen = () => {
                 <div id='stars3'></div>
                 <canvas width="900px" height="900px" class="mainCanvas"></canvas>
                 </section>`);
-    createCanvas();
+    myCanvas();
     myImage();
-    setInterval(playGame, 500);
+    setInterval(playGame(), 500);
 
 }
 
@@ -61,7 +61,7 @@ const youLose = () => {
   </div>`);
 };
 
-function createCanvas() {
+function myCanvas() {
     canvas = document.getElementsByClassName("maincanvas");
     ctx = canvas.getContext("2d");
     main = new Circuit(canvas.width , canvas.height);
@@ -76,18 +76,18 @@ function makeCanvas(){
 
 function myImage(){
     shipImg = new Image();
-    shipImg.src ="./img/g-ship.png";
+    shipImg.src ="img/g-ship.png";
 
     lineImg = new Image();
-    lineImg.src ="./img/line.png";
+    lineImg.src ="img/line.png";
 
     logoImg = new Image();
-    logoImg.src ="./img/logo.png";
+    logoImg.src ="img/logo.png";
     winnerImg = new Image();
-    winnerImg.src ="./img/winner.jpg";
+    winnerImg.src ="img/winner.jpg";
 
     losserImg = new Image();
-    losserImg.src ="./img/losser.jpg";
+    losserImg.src ="img/losser.jpg";
 };
 
 function playGame(){
@@ -104,7 +104,7 @@ window.onload=() =>{
     document.onkeydown = event =>{
         switch(event.code) {
             case "ArrowRight":
-                ship.directionRigt();
+                Ship.directionRigt();
                 break;
             case "ArrowLeft":
                 ship.directionLeft();

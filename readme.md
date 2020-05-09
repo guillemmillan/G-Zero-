@@ -4,7 +4,7 @@
 Mi proyecto es crear un juego parecido al F-zero pero con vista cenital. En este juego debemos conducir una nave por un circuito sin tocar las paredes, ya que nos restarían puntos de vida. El objetivo es realizar 3 vueltas sin perder toda la vida.
 
 ### Reglas del juego
-* Conducirá la nave utilizando las flechas.
+* Conducir la nave utilizando las flechas.
 * El jugador tendrá que realizar 3 vueltas sin perder toda la vida.
 
 ### MVP

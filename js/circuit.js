@@ -1,56 +1,52 @@
+"use strict"
+
 class Circuit {
-  constructor(wall, circuit, ship){
-    this.canvas = circuit;
-    this.context = this.canvas.getContext("2d");
-    this.walls = [];
-    this.ship = imgShip;
-    this.speed = shipSpeed;
-    this.start();
-  }
-  start(){
-    this.mainWalls();
-  }
+    constructor(x, y){ 
+    this.width = x;
+    this.high = y;
+    }
+    draw(){
+        ctx.myCanvas();
+    };
+};  
 
-  mainWalls(){
-    ctx.beginPath();
-    ctx.moveTo(50,750);
-    ctx.lineTo(1150, 750);
-    ctx.moveTo(1150, 760);
-    ctx.lineTo(1150, 50);
-    ctx.moveTo(1160, 50);
-    ctx.lineTo(40,50);
-    ctx.moveTo(50,50);
-    ctx.lineTo(50, 760);
-    ctx.closePath();
-    ctx.stroke();
+let linex = 50;
+let liney = 50;
 
-    //pared interior
-    ctx.beginPath();
-    ctx.moveTo(200, 600);
-    ctx.lineTo(1000, 600);
-    ctx.moveTo(1000, 610);
-    ctx.lineTo(1000, 200);
-    ctx.moveTo(1010, 200);
-    ctx.lineTo(200, 200);
-    ctx.moveTo(195, 190);
-    ctx.lineTo(200, 610);
-    ctx.closePath();
-    ctx.stroke();
-      }
-}
+let wall = "rgba(255, 255, 255, 1)";
+let clean = "rgba(0, 0, 0, 0)";
 
+let circuit = [ [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0],
+                [0, 0, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 0, 0],
+                [0, 0, 1, 0, 0, 0, 0, 2, 2, 0, 0, 0, 0, 1, 0, 0],
+                [0, 0, 1, 0, 0, 0, 0, 2, 2, 0, 0, 0, 0, 1, 0, 0],
+                [0, 0, 1, 0, 0, 0, 1, 1, 1, 1, 0, 0, 0, 1, 0, 0],
+                [0, 0, 1, 0, 0, 0, 1, 0, 0, 1, 0, 0, 0, 1, 0, 0],
+                [0, 0, 1, 0, 0, 0, 1, 0, 0, 1, 0, 0, 0, 1, 0, 0],
+                [0, 0, 1, 0, 0, 0, 1, 0, 0, 1, 0, 0, 0, 1, 0, 0],
+                [0, 0, 1, 0, 0, 0, 1, 0, 0, 1, 0, 0, 0, 1, 0, 0],
+                [0, 0, 1, 0, 0, 0, 1, 1, 1, 1, 0, 0, 0, 1, 0, 0],
+                [0, 0, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 0, 0],
+                [0, 0, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 0, 0],
+                [0, 0, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 0, 0],
+                [0, 0, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 0, 0],
+                [0, 0, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 0, 0],
+                [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0],  
+            ];
 
-/*class Laps{
-  constructor(canvas, laps) {
-  this.ctx = this.canvas.getContext("2d");
-  this.laps = 0;
-
-  }, 
-
-  let laps() {
-    this.laps = Math.floor(frames / 20);
-    ctx.font = "24px Arial";
-    ctx.fillStyle = "white";
-    ctx.fillText("Laps: " + this.laps, canvas.width - 200, 50);
-  }
-}*/
+  function  drawCircuit(){
+        let object;
+        for(let y=0; y < 17; y++){
+            for (let x=0; x < 17; x++ ){
+                switch(circuit[y][x]){
+                    case 0: object = clean;
+                        break;
+                    case 1: ctx.fillstyle= wall;
+                            ctx.fillRect(x*linex, y*liney, linex, liney);
+                    break;
+                    case 2: let line = new Line(x*linex, y*liney)
+                    line.draw();
+                }
+            }
+        }
+    }
